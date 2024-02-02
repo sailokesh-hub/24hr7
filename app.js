@@ -1,8 +1,8 @@
 const express = require("express");
 const mysql = require("mysql2");
 const cors = require("cors");
-
 const path = require("path");
+const port = process.env.PORT || 3001;
 
 const bodyParser = require("body-parser");
 
@@ -16,9 +16,7 @@ const initializeDbAndServer = async () => {
         }
         console.log("Connected to MySQL database");
       });
-      app.listen(3002, () => {
-        console.log("Server Is running on http://localhost:3002");
-      });
+      app.listen(port, () => console.log(`Example app listening on port ${port}!`));
     } catch (error) {
       console.log(`Data base Error is ${error}`);
       process.exit(1);
