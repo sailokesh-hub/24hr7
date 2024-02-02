@@ -25,3 +25,5 @@ const initializeDbAndServer = async () => {
   
   initializeDbAndServer();
 
+app.get("/", (req, res) => res.send("hello world"));
+
